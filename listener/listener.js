@@ -2,8 +2,8 @@ const io = require('socket.io')(3000);
 const crypto = require('crypto');
 const MongoClient = require('mongodb').MongoClient;
 
-const encryptionKey = 'your_encryption_key';
-const url = 'mongodb://localhost:27017';
+const encryptionKey = 'fdkjgDSZmcnKJLKldkK';
+const url = 'mongodb://localhost:27017_assignment';
 const dbName = 'time_series_db';
 
 io.on('connection', (socket) => {
