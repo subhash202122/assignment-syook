@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Series Data</title>
+</head>
+<body>
+  <h1>Time Series Data</h1>
+  <div id="data-container"></div>
+
+  <script src="socket.io/socket.io.js"></script>
+  <script>
+    const socket = io.connect('http://localhost:3000'); // Replace with the listener service URL
+    const dataContainer = document.getElementById('data-container');
+
+    socket.on('data-stream', (data) => {
+      const paragraph = document.createElement('p');
+      paragraph.textContent = JSON.stringify(data);
+      dataContainer.appendChild(paragraph);
+    });
+  </script>
+</body>
+</html>
